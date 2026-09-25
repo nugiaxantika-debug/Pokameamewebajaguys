@@ -1406,6 +1406,7 @@ private loadKaryawanData() {
     const fakecallCommands = ['.fakecallmenu', 'fakecallmenu', '.fakecallandroid', 'fakecallandroid', '.fakecalliphone', 'fakecalliphone', '.fakevidcalliphone', 'fakevidcalliphone'];
     const iqcCommands = ['.iqcmenu', 'iqcmenu', '.iqc', 'iqc', '.iqcpink', 'iqcpink', '.iqcmerah', 'iqcmerah', '.iqcbiru', 'iqcbiru', '.iqckuning', 'iqckuning'];
     const gameCommands = ['.gamemenu', 'gamemenu', '.tebakgambar', 'tebakgambar', '.susunkata', 'susunkata', '.math', 'math', '.tebakkata', 'tebakkata', '.tebakbendera', 'tebakbendera', '.asahotak', 'asahotak', '.tebaklirik', 'tebaklirik', '.tekateki', 'tekateki', '.tebakangka', 'tebakangka', '.kuis', 'kuis', '.tebakkota', 'tebakkota', '.family100', 'family100', '.tebakusia', 'tebakusia', '.tebakkimia', 'tebakkimia', '.tebakbuah', 'tebakbuah', '.werewolf', 'werewolf', '.tebakuang', 'tebakuang', '.tebaksurah', 'tebaksurah', '.tebakhewan', 'tebakhewan', '.tebakbaju', 'tebakbaju', '.tebakcelana', 'tebakcelana', '.tebakmakanan', 'tebakmakanan', '.tebakjkt48', 'tebakjkt48', '.togel', 'togel', '.stoptogel', 'stoptogel', '.truthordare', 'truthordare', '.ulartangga', 'ulartangga'];
+    const gabutCommands = ['.gabutmenu', 'gabutmenu', '.cminkaleng', 'cminkaleng', '.ckotrokok', 'ckotrokok', '.cpapercup', 'cpapercup', '.cjerigen', 'cjerigen', '.csoftcasehp', 'csoftcasehp', '.cidcard', 'cidcard'];
     const premiumCommands = ['.limit', 'limit', '.ai', 'ai']; // Placeholder for premium restricted commands
     
     if (ownerCommands.includes(requestedCmd) && !isOwner) {
@@ -1502,7 +1503,8 @@ private loadKaryawanData() {
         ...cdramaCommands,
         ...fakecallCommands,
         ...iqcCommands,
-        ...gameCommands
+        ...gameCommands,
+        ...gabutCommands
     ];
     const isProtectedFeature = requireRegistrationCommands.includes(requestedCmd.toLowerCase()) || requireRegistrationCommands.includes("." + possibleCommandName);
 
@@ -1545,7 +1547,7 @@ private loadKaryawanData() {
 
     if (isMenuCmd) {
       const botName = this.customBotName || this.sock.user?.name || "Wabot Pro";
-      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length + toolsCommands.length + deviceCommands.length + tiketCommands.length + karyawanCommands.length + hewanCommands.length + bokepCommands.length + aiCommands.length + cdramaCommands.length + gameCommands.length + fakecallCommands.length + iqcCommands.length;
+      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length + toolsCommands.length + deviceCommands.length + tiketCommands.length + karyawanCommands.length + hewanCommands.length + bokepCommands.length + aiCommands.length + cdramaCommands.length + gameCommands.length + fakecallCommands.length + iqcCommands.length + gabutCommands.length;
       
       const dateNow = new Date();
       const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Jakarta' };
@@ -1602,6 +1604,7 @@ ${readmore}
 │ .cdramamenu
 │ .fakecallmenu
 │ .iqcmenu
+│ .gabutmenu
 
 Ketik menu yang kamu inginkan.`;
       
@@ -3312,7 +3315,7 @@ Contoh: .delowner 628xxx` }, { quoted: msg });
       this.broadcastState(`Deleted custom bot name`);
       await this.sock.sendMessage(jid, { text: `✅ Berhasil mereset nama bot ke default.` }, { quoted: msg });
     } else if (body === ".totalfitur" || body === "totalfitur") {
-      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length + toolsCommands.length + deviceCommands.length + tiketCommands.length + karyawanCommands.length + hewanCommands.length + bokepCommands.length + aiCommands.length + cdramaCommands.length + gameCommands.length + fakecallCommands.length + iqcCommands.length;
+      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length + toolsCommands.length + deviceCommands.length + tiketCommands.length + karyawanCommands.length + hewanCommands.length + bokepCommands.length + aiCommands.length + cdramaCommands.length + gameCommands.length + fakecallCommands.length + iqcCommands.length + gabutCommands.length;
       await this.sock.sendMessage(jid, { text: `⚠️ *Total Fitur Bot* : ${totalFitur} Fitur` }, { quoted: msg });
     } else if (body.startsWith(".addprefix") || body.startsWith("addprefix")) {
       const text = messageContent.replace(/^\.?addprefix\s*/i, "").trim();
